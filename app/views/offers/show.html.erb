@@ -1,0 +1,18 @@
+<h2><%= @offer.name %> <%= @offer.date %> </h2>
+	<div id="offer_address"><%= @offer.address %></div>
+		<h5 id="offer_price">Offer Price:<%= @offer.price %></h5>
+		<h5 id="offer_endate">Expires:<%= @offer.enddate %></h5>
+	
+		<div id="new_bid"></div>
+	<p>
+	<button><%= link_to 'Bid on Event Queue', create_bid_path(@offer) %></button>
+	</p>
+<script>
+
+$('button').on('click', function () {
+
+	$('#new_bid').html('<%=j render(:partial => '/bids/form') %>');
+});
+
+</script>
+	

@@ -1,0 +1,32 @@
+/ %script
+/   var offers = [];
+/ %ol
+/   - @offers.each do |offer|
+/     %script
+/       = "$(document).ready(function () {"
+/       = "add_marker(#{offer.latitude}, #{offer.longitude}, '#{offer.name}');"
+/       = "});"
+/ %div#map
+/   %div#map_canvas
+
+  
+
+%div#new_offer
+
+%div#chart
+
+%div.row
+  %div.large-4.columns
+    %div#cell
+      %div.float
+        = link_to('Create', new_offer_path, :remote => true, :class => 'button round alert')
+      %div.float
+        - @offers.each do |offer|
+          = link_to(offer.name, offer)
+
+    %div.clear
+  %div.large-8.columns
+
+%ol#offers
+  = render(:partial => 'offers')
+

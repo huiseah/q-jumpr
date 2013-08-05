@@ -43,6 +43,9 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-debugger'
   gem 'pry-stack_explorer'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'simplecov'
 
   gem 'annotate'
 
@@ -56,7 +59,6 @@ end
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 

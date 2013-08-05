@@ -12,11 +12,28 @@
 #  longitude  :float            default(0.0)
 #  price      :decimal(, )
 #  date       :datetime
+#  enddate    :datetime
 #
 
 class Offer < ActiveRecord::Base
-	attr_accessible :name, :address, :user_id, :date, :price
+	before_save :geocode
+	
+	attr_accessible :name, :address, :user_id, :date, :enddate, :price
 	belongs_to :user, :inverse_of => :offers
 
-	validates :price, :numericality => { :greater_than => 0 }
+	validates :price, :presence => true, :numericality => { :greater_than => 5 }
+	validates :enddate, :presence => true
+	validates :date, :presence => true
+	validates :name, :presence => true
+
+	private
+		def geocode
+			result = Geocoder.search(self.address).first
+
+			if result.present?
+				self.latitude = result.latitude
+				self.longitude = result.longitude
+			
+		end
+	end
 end

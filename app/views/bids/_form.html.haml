@@ -1,0 +1,9 @@
+%div.row
+	%div.large-3.columns
+		= form_for @bid, :remote => true do |f|
+			= f.label :qposition
+			= f.text_field :qposition, :autofocus => true
+			= f.label :bid_price
+			= f.number_field :bid_price
+			= f.submit nil, :class => 'button radius'
+	%div.large-9.columns

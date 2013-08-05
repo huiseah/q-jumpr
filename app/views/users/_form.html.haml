@@ -1,0 +1,13 @@
+%div.row
+	%div.large-3.columns
+		= form_for @user, :remote => true do |f|
+			= f.label :email
+			= f.text_field :email, :autofocus => true
+			= f.label :balance
+			= f.number_field :balance
+			= f.label :password
+			= f.password_field :password
+			= f.label :password_confirmation
+			= f.password_field :password_confirmation
+			= f.submit nil, :class => 'button radius'
+	%div.large-9.columns
