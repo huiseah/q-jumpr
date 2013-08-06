@@ -1,0 +1,14 @@
+/ %div#new_bid
+
+%div.row
+  %div.large-4.columns
+    %div#cell
+      %div.float
+        = link_to('Bid again', new_bid_path, :remote => true, :class => 'large button round alert')
+  
+        
+    %div.clear
+  %div.large-8.columns
+
+/ %ol#bids
+/   = render(:partial => 'bids')

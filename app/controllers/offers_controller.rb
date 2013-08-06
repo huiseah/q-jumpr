@@ -7,7 +7,8 @@ class OffersController < ApplicationController
 
 	def show
 		@offer = Offer.find(params[:id])
-
+		@bids = @offer.bids.order([:qposition, :bid_price])
+		@bid = Bid.new
 	end
 
 	def new

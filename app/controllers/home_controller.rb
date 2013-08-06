@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
 	def index
-		@users = User.all
+		@offers = Offer.order([:enddate, :name])
 	end
 end

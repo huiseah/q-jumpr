@@ -20,8 +20,9 @@ class Offer < ActiveRecord::Base
 	
 	attr_accessible :name, :address, :user_id, :date, :enddate, :price
 	belongs_to :user, :inverse_of => :offers
+	has_many :bids
 
-	validates :price, :presence => true, :numericality => { :greater_than => 5 }
+	validates :price, :presence => true, :numericality => { :greater_than => 10 }
 	validates :enddate, :presence => true
 	validates :date, :presence => true
 	validates :name, :presence => true

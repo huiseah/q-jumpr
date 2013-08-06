@@ -1,0 +1,5 @@
+- @bids.each do |bid|
+	%ul
+		%li= link_to(offer.name.capitalize, offer)
+		= "Position in Queue #{bid.qposition}  @ #{number_to_currency(bid.bid_price)}"
+	

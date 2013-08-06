@@ -1,0 +1,6 @@
+$('form')[0].reset();
+$('#bids').html('<%=j render(:partial => 'bids') %>');
+$('#currencybar').html('<%=j number_to_currency(@auth.balance) %>');
+
+
+

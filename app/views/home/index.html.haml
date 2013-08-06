@@ -1,6 +1,18 @@
-= link_to('New', new_user_path, :remote => true, :class => 'button round')
+= link_to('New User', new_user_path, :remote => true, :class => 'large button round')
+= link_to('Kill a Queue', new_offer_path, :remote => true, :class => 'large button round alert')
 
-%div#new_user
+%div#new_offer
 
-%ol#users
-	= render(:partial => 'users/users')
+%div#chart
+
+%div.row
+  %div.large-4.columns
+    %div#cell
+      %div.float
+       
+
+    %div.clear
+  %div.large-8.columns
+
+%ol#offers
+  = render(:partial => '/offers/offers')

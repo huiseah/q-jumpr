@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 	attr_accessible :email, :balance, :password, :password_confirmation
 	has_many :offers, :inverse_of => :user
+	has_many :bids, :inverse_of => :user
 
 	validates :email, :uniqueness => true, :presence => true
 end

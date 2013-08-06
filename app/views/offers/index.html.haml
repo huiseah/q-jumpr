@@ -19,11 +19,22 @@
   %div.large-4.columns
     %div#cell
       %div.float
-        = link_to('Create', new_offer_path, :remote => true, :class => 'button round alert')
+        = link_to('Kill a Queue', new_offer_path, :remote => true, :class => 'large button round alert')
       %div.float
         - @offers.each do |offer|
           = link_to(offer.name, offer)
-
+      / %div.large.button.dropdown{:href => "#"}
+      /   Dropdown Button
+      /   - @offers.each do |offer|
+      /   %ul
+      /     %li
+      /       %a{:href => "#"} ="#{offer.name}"
+      /     %li
+      /       %a{:href => "#"} Another Dropdown Item
+      /     %li.divider
+      /     %li
+      /       %a{:href => "#"} Last Item
+        
     %div.clear
   %div.large-8.columns
 

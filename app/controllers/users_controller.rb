@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 	end
 
 	def index
-		redirect_to(root_path)
+		@users = User.all
 		@balance = params[:balance]
 	end
 
