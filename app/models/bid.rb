@@ -9,10 +9,11 @@
 #  updated_at :datetime
 #  user_id    :integer
 #  qposition  :integer
+#  winner     :boolean
 #
 
 class Bid < ActiveRecord::Base
-	attr_accessible :bid_price, :qposition, :offer_id, :user_id
+	attr_accessible :bid_price, :qposition, :offer_id, :user_id, :winner
 	belongs_to :user 
 	belongs_to :offer
 

@@ -7,15 +7,15 @@
 	<p>
 		<button id="first_bid" class="button success round"><%= link_to('Bid on Event Queue', new_bid_path(@offer)) %></button>
 	</p>
-	<div id="bids"></div>
+	<div id="bids"><%= render(:partial => '/bids/bids') %></div>
 <script>
 
-$('#first_bid').on('click', function () {
+	$('#first_bid').on('click', function () {
 
-	$('#new_bid').html('<%=j render(:partial => '/bids/form') %>');
-	$('#first_bid').fadeOut();
-	return false;
-});
+		$('#new_bid').html('<%=j render(:partial => '/bids/form') %>');
+		$('#first_bid').fadeOut();
+		return false;
+	});
 
 </script>
 	

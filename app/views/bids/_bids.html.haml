@@ -1,5 +1,10 @@
+
 - @bids.each do |bid|
 	%ul
-		%li= link_to(offer.name.capitalize, offer)
-		= "Position in Queue #{bid.qposition}  @ #{number_to_currency(bid.bid_price)}"
+		%li
+			= "Position in queue: #{bid.qposition}  @ #{number_to_currency(bid.bid_price)}"
+			- if @auth == bid.offer.user
+				= link_to('Winner', offer_winner_path(:bid_id => bid.id), :remote => true, :class => 'small button round alert')
+
+  
 	

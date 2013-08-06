@@ -11,6 +11,7 @@ class OffersController < ApplicationController
 		@bid = Bid.new
 	end
 
+
 	def new
 		@offer = Offer.new
 	end

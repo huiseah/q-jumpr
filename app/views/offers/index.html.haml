@@ -21,19 +21,17 @@
       %div.float
         = link_to('Kill a Queue', new_offer_path, :remote => true, :class => 'large button round alert')
       %div.float
+    
+      %a.button.dropdown.success.round{"data-dropdown" => "drop1", :href => "#"} 
+        Offers
+       
+    %ul#drop1.f-dropdown
+      %li
         - @offers.each do |offer|
           = link_to(offer.name, offer)
-      / %div.large.button.dropdown{:href => "#"}
-      /   Dropdown Button
-      /   - @offers.each do |offer|
-      /   %ul
-      /     %li
-      /       %a{:href => "#"} ="#{offer.name}"
-      /     %li
-      /       %a{:href => "#"} Another Dropdown Item
-      /     %li.divider
-      /     %li
-      /       %a{:href => "#"} Last Item
+            
+            
+    
         
     %div.clear
   %div.large-8.columns

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130805023333) do
+ActiveRecord::Schema.define(version: 20130806064027) do
 
   create_table "bids", force: true do |t|
     t.decimal  "bid_price"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20130805023333) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "qposition"
+    t.boolean  "winner",     default: false
   end
 
   create_table "offers", force: true do |t|

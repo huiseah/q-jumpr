@@ -18,13 +18,42 @@ class BidsController < ApplicationController
 	end
 
 	def create
-		# binding.pry
 		@offer = Offer.find(params[:bid][:offer_id])
-		@bid = Bid.new
+		@bid = Bid.new(params[:bid])
+		@bid.user_id = @auth.id
 
 			if @offer.present?
 				@bid.offer_id = @offer.id
 				@bid.save
+				# binding.pry
+				@bids = @offer.bids.order([:qposition, :bid_price])
+
+				cost = @bid.bid_price.to_i
+				@auth.balance = @auth.balance - cost
+				@auth.save
+
+				@auth.bids << @bid
+
+			else
+				redirect_to(offer_path)
+			end
+		end
+
+		def make_bid_winner
+			@offer = Offer.find(params[:bid][:offer_id])
+			@bid = Bid.find(params[:bid_id])
+		
+
+			# if @auth = @bid.offer.user
+		# 	@win_button = @bid.bid_price.to_i
+		# 	reward = @bid.bid_price.to_i 
+		# 	@bid.user.balance = @bid.user.balance + reward
+		# 	@bid.user.save
+		# end
+			if @offer.present?
+				@bid.offer_id = @offer.id
+				@bid.save
+				# binding.pry
 				@bids = @offer.bids.order([:qposition, :bid_price])
 
 				cost = @bid.bid_price.to_i
