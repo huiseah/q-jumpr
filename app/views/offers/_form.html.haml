@@ -14,10 +14,10 @@
           = f.text_field :address
           = f.label :date
           = f.datetime_select :date, :placeholder => 'Start date/time of event'
-          = f.label :enddate
+          = f.label :Expires
           = f.datetime_select :enddate, :placeholder => 'Expiry date/time of Offer'
           = f.label :price
           = f.number_field :price, :placeholder => 'Offer Price in dollars'
-          = f.submit 'Create Offer', :class => 'button round tiny' 
+          = f.submit 'Create Offer', :class => 'button round success' 
         %div#quote
       .large-8.columns 

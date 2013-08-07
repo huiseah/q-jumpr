@@ -1,5 +1,5 @@
 - @offers.each do |offer|
 	%ul
-		%li= link_to(offer.name.capitalize, offer)
-		= "Expires #{offer.enddate}  @ #{number_to_currency(offer.price)}"
+		%li#offertextname= link_to(offer.name.capitalize, offer)
+		%p#offerdescribe= "Expires: #{offer.enddate}  @ #{number_to_currency(offer.price)}" 
 	
