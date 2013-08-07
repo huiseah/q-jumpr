@@ -1,7 +1,7 @@
-<h2><%= @offer.name %> <%= @offer.date %> </h2>
-	<div id="offer_address"><%= @offer.address %></div>
-		<h5 id="offer_price">Offered @: <%= number_to_currency(@offer.price) %></h5>
-		<h5 id="offer_endate">Expires: <%= @offer.enddate %></h5>
+<h2><%= @offer.name %></h2> 
+	<div id="offer_address"><%= @offer.address %> <%= @offer.date %></div>
+		<h4 id="offer_price">Offered @: <%= number_to_currency(@offer.price) %></h4>
+		<h4 id="offer_endate">Expires: <%= @offer.enddate %></h4>
 	
 		<div id="new_bid"></div>
 	<p>

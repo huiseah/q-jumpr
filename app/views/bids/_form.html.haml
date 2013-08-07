@@ -3,8 +3,8 @@
 		= form_for @bid, :remote => true do |f|
 			= f.label :Your_position_in_Queue
 			= f.number_field :qposition, :autofocus => true
-			= f.label :bid_price
-			= f.number_field :bid_price, :placeholder => 'Lesser $ acceptable to you'
+			= f.label :bid_equal_or_below_offer_price
+			= f.number_field :bid_price, :placeholder => 'Lesser $ awarded to you'
 			/ = f.hidden_field :offer, :id
 			= hidden_field_tag('bid[offer_id]', @offer.id)
 			= f.submit nil, :class => 'button success radius'

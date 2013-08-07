@@ -4,10 +4,12 @@
 		%li{:id => "bid_#{bid.id}"}
 			= "Position in queue: #{bid.qposition}  @ #{number_to_currency(bid.bid_price)}"
 			- if @auth == bid.offer.user
-				- if bid.winner
+				- if bid.winner 
 					= link_to('Declared Winner', offer_winner_path(:bid_id => bid.id), :remote => true, :class => 'small button round success')
+		
 				- else
-					= link_to('Winner?', offer_winner_path(:bid_id => bid.id), :remote => true, :class => 'small button round alert')				
+					-if !@offer.offer_won?
+						= link_to('Winner?', offer_winner_path(:bid_id => bid.id), :remote => true, :class => 'small button round alert')				
 		
 
 

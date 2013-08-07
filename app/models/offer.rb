@@ -27,6 +27,10 @@ class Offer < ActiveRecord::Base
 	validates :date, :presence => true
 	validates :name, :presence => true
 
+	def offer_won?
+		self.bids.where(:winner => true).count == 1
+	end
+
 	private
 		def geocode
 			result = Geocoder.search(self.address).first

@@ -22,7 +22,7 @@ class BidsController < ApplicationController
 		@bid = Bid.new(params[:bid])
 		@bid.user_id = @auth.id
 
-			if @offer.present?
+			if @offer.present? && @offer.price.to_i >= @bid.bid_price.to_i
 				@bid.offer_id = @offer.id
 				@bid.save
 				# binding.pry

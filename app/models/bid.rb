@@ -18,4 +18,5 @@ class Bid < ActiveRecord::Base
 	belongs_to :offer
 
 	validates :bid_price, :presence => true, :numericality => { :greater_than => 1 }
+	validates_uniqueness_of :winner, :scope => :offer_id, :conditions => lambda { where(:winner => true) }
 end

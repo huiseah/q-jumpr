@@ -1,3 +1,4 @@
+$('#bids a').not('#bid_<%=@bid.id%> a').fadeOut();
 $('#bid_<%=@bid.id%> a').removeClass('small button round alert');
 $('#bid_<%=@bid.id%> a').html('Declared Winner').addClass('small button success round');
 $('#currencybar').html('<%=j number_to_currency(@auth.balance) %>');
