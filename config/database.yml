@@ -19,15 +19,15 @@ development:
   encoding: unicode
   database: q-jumpr_development
   pool: 5
-  host: localhost
-  username: nickyhughes
-  password:
+  # host: localhost
+  username: hui
+  password: password
 
 test:
   adapter: postgresql
   encoding: unicode
   database: q-jumpr_test
   pool: 5
-  host: localhost
-  username: nickyhughes
-  password:
+  # host: localhost
+  username: hui
+  password: password
