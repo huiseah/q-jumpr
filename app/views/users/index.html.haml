@@ -1,6 +1,6 @@
-= link_to('New', new_user_path, :remote => true, :class => 'button round')
+%div#userbutton= link_to('New User', new_user_path, :remote => true, :class => 'button round')
 
 %div#new_user
 
-%ol#users
+%ul#users
 	= render(:partial => 'users/users')

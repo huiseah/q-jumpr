@@ -1,3 +1,11 @@
+@import "foundation/variables";
+@import "foundation/components/global";
+@import "foundation/components/buttons";
+@import "foundation/components/dropdown-buttons";
+
+
+/*Map CSS*/
+
 html {
   height: 100%;
 }
@@ -35,3 +43,131 @@ div.popup {
 .titlename {
   color: #f9f0df;
 }
+
+
+
+/*Views CSS*/
+
+.button.alert.small {
+  @include button-base;
+  @include button-size($padding: $button-sml);
+  @include button-style($bg: #a10900);
+  @include radius;
+  @include single-transition;
+  @include inset-shadow($active: true);
+}
+
+.button.small {
+  @include button-base;
+  @include button-size($padding: $button-sml);
+  @include button-style($bg: #780700);
+  @include radius;
+  @include single-transition;
+  @include inset-shadow($active: true);
+}
+
+.button.large {
+  @include button-base;
+  @include button-size($padding: $button-lrg);
+  @include button-style($bg: #ffaf00);
+  @include radius($radius: $button-round);
+  @include single-transition;
+  @include inset-shadow($active: true);
+  color: #a10900;
+}
+
+.button.large.alert {
+  @include button-base;
+  @include button-size($padding: $button-lrg);
+  @include button-style($bg: #a10900);
+  @include radius($radius: $button-round);
+  @include single-transition;
+  @include inset-shadow($active: true);
+}
+
+.button.success.dropdown {
+  @include button-base;
+  @include button-size($padding: $button-med);
+  @include dropdown-button($pip-color: #a10900);
+  @include button-style($bg: #ffaf00);
+  @include radius($radius: $button-round);
+  @include single-transition;
+  @include inset-shadow($active: true);
+  color: #a10900;
+}
+
+.button {
+  @include button-base;
+  @include button-size($padding: $button-med);
+  @include button-style($bg: #ffaf00);
+  @include radius($radius: $button-round);
+  @include single-transition;
+  @include inset-shadow($active: true);
+  color: #a10900;
+}
+
+.button.success {
+  @include button-base;
+  @include button-size($padding: $button-med);
+  @include button-style($bg: #ffaf00);
+  @include radius($radius: $button-round);
+  @include single-transition;
+  @include inset-shadow($active: true);
+  color: #a10900;
+}
+
+.raider {
+  border-radius: 7px;
+  color: #f6f6f1;
+  text-align: center;
+  clear: right;
+}
+
+body {
+  background-color: #030019;
+  color: #f8e8d1;
+}
+
+.mainbody {
+  min-height: 500px;
+}
+
+#offerdescribe {
+  font-size: 13.5px;
+  color: #cecbc2;
+}
+
+#offer_name {
+  color: #3b3b3b;
+}
+
+#offer_price {
+  color: #3b3b3b;
+  font-size: 24px;
+}
+
+#offer_enddate {
+  color: #3b3b3b;
+  font-size: 24px;
+}
+
+#offer_address {
+  font-size: 13.5px;
+}
+
+.no-bullet {
+  color: #8a8e8c;
+}
+
+.center {
+  text-align: center;
+  clear: right;
+}
+
+.right a {
+  color: #8a8e8c;
+}
+
+/*#offers a {
+  color: red;
+}*/

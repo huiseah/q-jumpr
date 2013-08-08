@@ -1,12 +1,12 @@
 <div class="row">
   <div class="large-12 columns">
-    <div class="nav-bar right">
+    <div class="nav-bar center">
       <div class="navbutton">
         <ul class="button-group">
           <li><%= link_to('Home', root_path, :class => 'small button radius') %></li>
           <li><%= link_to('Users', users_path, :class => 'small button radius') %></li>
           <li><%= link_to('Cutting Queues', offers_path, :class => 'small button radius') %></li>
-          <li><%= login_nav %></li>
+          <li id="loginname"><%= login_nav %></li>
            <% if @auth %>
           <li id="currencybar" class="small button alert radius"><%= number_to_currency(@auth.balance) %></li>
           <% end %>
@@ -14,8 +14,8 @@
       </div>
     </div>
     <div class="tip">
-    <h2 class="raider">Q-JumpR</h2>
-    <p>How poor are they that have not patience! 
+    <h1 class="raider">Q-JumpR</h1>
+    <p class="raider">How poor are they that have not patience! 
     For wit depends on dilatory time.</p>
     </div>
   </div>

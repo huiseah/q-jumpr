@@ -1,8 +1,8 @@
-<h2><%= @offer.name %></h2> 
-	<div id="offer_address"><%= @offer.address %> <%= @offer.date %></div>
-		<h4 id="offer_price">Offered @: <%= number_to_currency(@offer.price) %></h4>
-		<h4 id="offer_endate">Expires: <%= @offer.enddate %></h4>
-	
+<h2 id="offer_name"><%= @offer.name %></h2> 
+	<p id="offer_address"><%= @offer.address %> <%= @offer.date %></p>
+		<div id="offer_enddate">Expires: <%= @offer.enddate %></div>
+		<p id="offer_price">Offered @: <%= number_to_currency(@offer.price) %></p>
+
 		<div id="new_bid"></div>
 	<p>
 		<button id="first_bid" class="button success round"><%= link_to('Bid on Event Queue', new_bid_path(@offer)) %></button>

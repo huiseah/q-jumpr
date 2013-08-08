@@ -16,11 +16,11 @@
 %div#chart
 
 %div.row
-  %div.large-4.columns
+  %div.center
     %div#cell
-      %div.float
+      %div.center
         = link_to('Kill a Queue', new_offer_path, :remote => true, :class => 'large button round alert')
-      %div.float
+      %div.center
     
       %a.button.dropdown.success.round{"data-dropdown" => "drop1", :href => "#"} 
         Active Offers
@@ -39,16 +39,21 @@
 %ol#offers
   = render(:partial => 'offers')
 
-%script
-  var offers = [];
+
+  
 %ol
   - @offers.each do |offer|
     %script
       = "$(document).ready(function () {"
-      = "add_marker(#{offer.latitude}, #{offer.longitude}, '#{offer.name}', '#{offer.address}');"
+      = "add_marker(#{offer.latitude}, #{offer.longitude}, '#{offer.name}', '#{offer.address.gsub(/'/, '\\\'')}');"
       = "});"
 %div#map
   %div#map_canvas
+
+  / %script
+  /   = "$(document).ready(function () {"
+  /   = "initialize(-33.8649688, 151.2116847, 14);"
+  /   = "});"
 
 
 
