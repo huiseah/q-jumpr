@@ -23,7 +23,7 @@
       %div.float
     
       %a.button.dropdown.success.round{"data-dropdown" => "drop1", :href => "#"} 
-        Offers Active
+        Active Offers
        
     %ul#drop1.f-dropdown
       %li
@@ -38,4 +38,17 @@
 
 %ol#offers
   = render(:partial => 'offers')
+
+%script
+  var offers = [];
+%ol
+  - @offers.each do |offer|
+    %script
+      = "$(document).ready(function () {"
+      = "add_marker(#{offer.latitude}, #{offer.longitude}, '#{offer.name}', '#{offer.address}');"
+      = "});"
+%div#map
+  %div#map_canvas
+
+
 
