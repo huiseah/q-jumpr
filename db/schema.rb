@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130806064027) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bids", force: true do |t|
     t.decimal  "bid_price"
     t.integer  "offer_id"
