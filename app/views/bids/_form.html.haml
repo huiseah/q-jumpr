@@ -1,5 +1,5 @@
 %div.row.center
-	%div.large-3.columns
+	%div.large-3.columns.large-centered
 		= form_for @bid, :remote => true do |f|
 			= f.label :Your_position_in_Queue
 			= f.number_field :qposition, :autofocus => true

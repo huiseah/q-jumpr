@@ -1,12 +1,6 @@
 class BidsController < ApplicationController
 	before_filter :only_authorized
 
-
-	def index
-		offer = Offer.where(:offer_id => params[:offer][:id])
-		@bids = @current_offer.bids.order([:qposition, :bid_price])
-	end
-
 	def show
 		@bid = Bid.find(params[:id])
 
@@ -22,7 +16,7 @@ class BidsController < ApplicationController
 		@bid = Bid.new(params[:bid])
 		@bid.user_id = @auth.id
 
-			if @offer.present? && @offer.price.to_i >= @bid.bid_price.to_i
+			if !@offer.offer_won? && @offer.present? && @offer.price.to_i >= @bid.bid_price.to_i  #@offer.present?
 				@bid.offer_id = @offer.id
 				@bid.save
 				# binding.pry
@@ -35,7 +29,7 @@ class BidsController < ApplicationController
 				@auth.bids << @bid
 
 			else
-				redirect_to(offer_path)
+				redirect_to(root_path)
 			end
 		end
 
@@ -56,7 +50,7 @@ class BidsController < ApplicationController
 				@auth.save
 
 			else
-				redirect_to(offer_path)
+				redirect_to(root_path)
 			end
 		end
 			

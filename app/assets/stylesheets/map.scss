@@ -116,6 +116,16 @@ div.popup {
   color: #a10900;
 }
 
+.button.small.success {
+  @include button-base;
+  @include button-size($padding: $button-sml);
+  @include button-style($bg: #ffaf00);
+  @include radius;
+  @include single-transition;
+  @include inset-shadow($active: true);
+  color: #a10900;
+}
+
 .raider {
   border-radius: 7px;
   color: #f6f6f1;
