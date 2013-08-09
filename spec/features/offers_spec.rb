@@ -4,14 +4,14 @@ describe 'offers' do
 
   describe 'GET /' do
     it 'displays register link' do
-      visit root_path
+      visit root_url
       page.should have_link('Kill a Queue')
     end
   end
 
   describe 'GET /users/new' do
     it 'displays the new user form', :js => true do
-      visit root_path
+      visit root_url
       click_link('New User')
       page.should have_button('Create User')
     end
@@ -19,7 +19,7 @@ describe 'offers' do
 
   describe 'POST /users' do
     it 'creates a new user', :js => true do
-      visit root_path
+      visit root_url
       click_link('New User')
       fill_in('Balance', :with => 50)
       fill_in('Email', :with => 'bob@gmail.com')
@@ -33,7 +33,7 @@ describe 'offers' do
 
   describe 'GET /session/new' do
     it 'displays the login form' do
-      visit root_path
+      visit root_url
       click_link('Login')
       page.should have_text('Login')
     end
@@ -41,7 +41,7 @@ describe 'offers' do
 
   describe 'POST /session/new' do
     it 'creates a new session' do
-      visit root_path
+      visit root_url
       click_link('Login')
       page.should have_text('Login')
       fill_in('email', :with => 'bob@gmail.com')
@@ -53,7 +53,7 @@ describe 'offers' do
 
   describe 'POST /offer/new' do
     it 'creates a new offer', :js => true do
-      visit root_path
+      visit root_url
       login
       click_link('Kill a Queue')
       page.should have_button('Create Offer')
@@ -70,7 +70,7 @@ describe 'offers' do
 end
 
 def login
-  visit root_path
+  visit root_url
   click_link('Login')
   page.should have_text('Login')
   fill_in('email', :with => 'bob@gmail.com')
