@@ -9,7 +9,7 @@
 #  updated_at :datetime
 #  user_id    :integer
 #  qposition  :integer
-#  winner     :boolean
+#  winner     :boolean          default(FALSE)
 #
 
 class Bid < ActiveRecord::Base

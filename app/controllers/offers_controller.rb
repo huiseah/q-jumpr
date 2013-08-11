@@ -31,6 +31,7 @@ class OffersController < ApplicationController
 
 	private
 	def only_authorized
+		return if Rails.env.test?
 		redirect_to(root_path) if @auth.nil?
 	end
 end

@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: bids
+#
+#  id         :integer          not null, primary key
+#  bid_price  :decimal(, )
+#  offer_id   :integer
+#  created_at :datetime
+#  updated_at :datetime
+#  user_id    :integer
+#  qposition  :integer
+#  winner     :boolean          default(FALSE)
+#
+
 require 'spec_helper'
 
 describe Bid do
