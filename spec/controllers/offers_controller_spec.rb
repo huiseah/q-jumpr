@@ -1,17 +1,38 @@
 require 'spec_helper'
 
-describe OffersController do 
+describe OffersController do
+  before do
+    user = User.create(:email => 'testicles@gmail.com', :password => 'a', :password_confirmation => 'a')
+  end
   describe 'GET for index' do
-    before do
-      user = User.create(:email => 'testicles@gmail.com', :password => 'a', :password_confirmation => 'a')
-      # session = Session.create(:session => [:user_id])
-    end
-    it 'renders the index template' do 
+    it 'renders the index template' do
       get :index
       expect(response).to render_template ("index")
+      response.code.should == '200'
     end
   end
+
+  describe 'GET for new' do
+    it "renders the new form template", :js => true do
+      xhr :get, :new
+      response.code.should == '200'
+      # response.should render_template(:partial => '_form')
+    end
+  end
+
+  # describe 'POST for create' do
+  #   it "creates a new offer" do
+  #     user = User.create(:email => 'testicles@gmail.com', :password => 'a', :password_confirmation => 'a')
+  #     offer_attributes = { price: 20, enddate: Time.now.advance(days: 30), date: Time.now, name: 'Hoyts' }
+  #     post :create, offer: offer_attributes, user: user
+  #     assigns(:offer).should be_a(Offer)
+  #     # expect(response).to render_template (partial: "offers")
+  #   end
+  # end
 end
+
+
+
 
 #   describe 'GET to show' do
 #     before do
